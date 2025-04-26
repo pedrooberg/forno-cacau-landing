@@ -11,7 +11,7 @@
 
 @layer components {
   .italian-pattern {
-    @apply fixed top-0 bottom-0 w-24 bg-repeat-y;
+    @apply fixed top-0 bottom-0 w-24 bg-repeat-y z-0;
     background-image: url('/lovable-uploads/c220b278-af54-4b1f-adb3-e1d5bc5360f4.png');
     background-size: contain;
   }
@@ -21,7 +21,7 @@
   }
 
   .contact-signature {
-    @apply glass-card space-y-3;
+    @apply glass-card space-y-3 text-center;
   }
 
   .contact-signature h4 {
@@ -33,6 +33,10 @@
   }
 
   .contact-info a {
-    @apply flex items-center gap-2 hover:text-forno-green transition-colors;
+    @apply flex items-center justify-center gap-2 hover:text-forno-green transition-colors;
+  }
+
+  .section-pattern {
+    @apply relative z-10;
   }
 }

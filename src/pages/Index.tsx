@@ -15,7 +15,7 @@ const Index = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair mb-6">
             Soluções Gastronômicas B2B
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 mb-8 text-justify">
             Tradição italiana, qualidade excepcional
           </p>
           <Button 
@@ -33,7 +33,7 @@ const Index = () => {
       <section className="py-20 section-pattern">
         <div className="container mx-auto px-4">
           <SectionTitle>Quem Somos Nós</SectionTitle>
-          <div className="prose prose-lg prose-invert max-w-3xl mx-auto">
+          <div className="prose prose-lg prose-invert max-w-3xl mx-auto text-justify">
             <p className="text-lg mb-6">
               Com 22 anos de experiência em pizzarias e restaurantes, o Forno da Cacau renasce como líder em soluções gastronômicas B2B, atendendo bares, restaurantes, pizzarias, hotéis, pousadas, supermercados e resorts com excelência.
             </p>
@@ -81,6 +81,19 @@ const Index = () => {
       <section className="py-20 section-pattern">
         <div className="container mx-auto px-4">
           <SectionTitle>Solução Integrada</SectionTitle>
+          <div className="prose prose-lg prose-invert max-w-3xl mx-auto text-justify mb-8">
+            <p>
+              Investimos diretamente no seu ponto comercial, oferecendo:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>Geladeiras e freezers em comodato</li>
+              <li>Fornos profissionais em comodato</li>
+              <li>Letreiro luminoso personalizado em comodato</li>
+              <li>Harmonização completa do cardápio</li>
+              <li>Abastecimento regular de produtos</li>
+              <li>Treinamento especializado da equipe</li>
+            </ul>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <FeatureCard title="Fornecimento de produtos pré-prontos" icon="truck" />
             <FeatureCard title="Logística dedicada" icon="truck" />
@@ -104,6 +117,25 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <SectionTitle>Canais de Atendimento B2B</SectionTitle>
+          <div className="glass-card max-w-lg mx-auto text-center">
+            <div className="space-y-4">
+              <a href="mailto:faleconosco@fornodacacau.com.br" className="flex items-center justify-center gap-2 hover:text-forno-green transition-colors">
+                <Mail className="w-4 h-4" />
+                faleconosco@fornodacacau.com.br
+              </a>
+              <a href="tel:+558299614-6604" className="flex items-center justify-center gap-2 hover:text-forno-green transition-colors">
+                <Phone className="w-4 h-4" />
+                +55 82 99614-6604
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Direção Executiva Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <SectionTitle>Direção Executiva</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <ContactCard
               name="Pedro Oberg"
@@ -117,45 +149,6 @@ const Index = () => {
               email="karolyn.mello@fornodacacau.com.br"
               whatsapp="(82) 99946-1983"
             />
-          </div>
-          <div className="mt-8 text-center">
-            <Button 
-              size="lg"
-              className="bg-forno-green hover:bg-forno-green/90"
-              onClick={() => window.location.href = "mailto:faleconosco@fornodacacau.com.br?subject=Avaliação de Investimento"}
-            >
-              <CalendarClock className="mr-2" />
-              Agende uma Avaliação Gratuita
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Nossa Equipe Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <SectionTitle>Nossa Equipe</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="glass-card">
-              <div className="border-b border-white/10 pb-4 mb-4">
-                <h3 className="text-2xl font-playfair font-bold">Pedro Oberg</h3>
-                <p className="text-forno-green">Direção Financeira e Comercial</p>
-              </div>
-              <div className="space-y-2 text-sm">
-                <p>Email: pedrooberg@fornodacacau.com.br</p>
-                <p>WhatsApp: (82) 99624-9229</p>
-              </div>
-            </div>
-            <div className="glass-card">
-              <div className="border-b border-white/10 pb-4 mb-4">
-                <h3 className="text-2xl font-playfair font-bold">Karolyn Mello</h3>
-                <p className="text-forno-green">Direção de Operações e Produtos</p>
-              </div>
-              <div className="space-y-2 text-sm">
-                <p>Email: karolyn.mello@fornodacacau.com.br</p>
-                <p>WhatsApp: (82) 99946-1983</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

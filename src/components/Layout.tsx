@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               alt="Forno da Cacau" 
               className="w-full max-w-2xl"
             />
-            <div className="flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-6 text-sm justify-center">
               <a href="tel:+5582996146604" className="hover:text-forno-green transition-colors flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 +55 82 99614-6604
