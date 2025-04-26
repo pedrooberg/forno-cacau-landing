@@ -1,3 +1,4 @@
+
 name: Build and Deploy to GitHub Pages
 
 on:
@@ -20,8 +21,17 @@ jobs:
         node-version: '20'
     - run: npm install
     - run: npm run build
+    
+    # Adjustments to fix base path in index.html
+    - name: Fix base path in index.html
+      run: |
+        cd dist
+        sed -i 's|<base href="/">|<base href="/">|g' index.html
+    
+    # Configure GitHub Pages deployment
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+        cname: www.fornodacacau.com.br

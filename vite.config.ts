@@ -20,5 +20,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/", // Configuração para garantir que os caminhos de assets são relativos
+  base: "/", // Use root path for assets
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: 'terser',
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+        },
+      },
+    },
+  },
 }));
