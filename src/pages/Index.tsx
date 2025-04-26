@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
-import TeamCard from "@/components/TeamCard";
+import ContactCard from "@/components/ContactCard";
 import ProductCard from "@/components/ProductCard";
 import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
-import { CalendarClock } from "lucide-react";
+import { CalendarClock, Mail, Phone } from "lucide-react";
 
 const Index = () => {
   return (
@@ -77,7 +77,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Solução Integrada Section with updated styles */}
+      {/* Solução Integrada Section */}
       <section className="py-20 section-pattern">
         <div className="container mx-auto px-4">
           <SectionTitle>Solução Integrada</SectionTitle>
@@ -100,7 +100,38 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Nossa Equipe Section with updated professional style */}
+      {/* Canais de Atendimento B2B Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <SectionTitle>Canais de Atendimento B2B</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <ContactCard
+              name="Pedro Oberg"
+              role="Direção Financeira e Comercial"
+              email="pedrooberg@fornodacacau.com.br"
+              whatsapp="(82) 99624-9229"
+            />
+            <ContactCard
+              name="Karolyn Mello"
+              role="Direção de Operações e Produtos"
+              email="karolyn.mello@fornodacacau.com.br"
+              whatsapp="(82) 99946-1983"
+            />
+          </div>
+          <div className="mt-8 text-center">
+            <Button 
+              size="lg"
+              className="bg-forno-green hover:bg-forno-green/90"
+              onClick={() => window.location.href = "mailto:faleconosco@fornodacacau.com.br?subject=Avaliação de Investimento"}
+            >
+              <CalendarClock className="mr-2" />
+              Agende uma Avaliação Gratuita
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Nossa Equipe Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <SectionTitle>Nossa Equipe</SectionTitle>

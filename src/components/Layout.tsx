@@ -1,28 +1,19 @@
-
 import { Mail, Phone, Instagram, Globe } from "lucide-react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-black text-white relative">
-      <div className="fixed top-0 left-0 w-full h-full z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-20"
-        >
-          <source src="https://player.vimeo.com/external/372308607.sd.mp4?s=0c597b55efb8d89ccfe4cd7545d755e700444396&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
-      </div>
+      {/* Italian pattern columns */}
+      <div className="italian-pattern left-0" />
+      <div className="italian-pattern right-0" />
       
       <header className="relative z-10 bg-black/80 backdrop-blur-lg border-b border-white/10">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-center gap-6">
             <img 
-              src="/lovable-uploads/9dc461b4-a912-4b04-bfe0-9b603c4bfa5f.png" 
-              alt="Forno da Cacau Logo" 
-              className="w-32" 
+              src="/lovable-uploads/2ce15f8a-5319-4e89-8bc0-ccf41cc629b2.png" 
+              alt="Forno da Cacau" 
+              className="w-full max-w-2xl"
             />
             <div className="flex items-center gap-6 text-sm">
               <a href="tel:+5582996146604" className="hover:text-forno-green transition-colors flex items-center gap-2">
@@ -38,9 +29,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </header>
 
-      <div className="relative z-10">
+      <main className="relative z-10 mx-24">
         {children}
-      </div>
+      </main>
 
       <footer className="bg-black/80 text-white py-8 relative z-10">
         <div className="container mx-auto px-4">
