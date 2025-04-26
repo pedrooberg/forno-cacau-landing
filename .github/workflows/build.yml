@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: npm install --legacy-peer-deps
     - name: Build project
-      run: npm run build
+      run: npm run build -- --config vite.config.ts
     
     # Adjustments to fix base path in index.html
     - name: Fix base path in index.html
@@ -37,3 +37,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         cname: www.fornodacacau.com.br
+
