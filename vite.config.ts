@@ -20,12 +20,12 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/", // Use root path for assets
+  base: "/",
   build: {
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
-    minify: true, // Uses esbuild by default instead of terser
+    minify: false, // Disabled minification to avoid Terser dependency
     assetsDir: "assets",
     rollupOptions: {
       output: {
