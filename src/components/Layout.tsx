@@ -1,3 +1,4 @@
+
 import { Mail, Phone, Instagram, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import BackgroundVideo from "./BackgroundVideo";
