@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -8,9 +9,15 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ children, className }: SectionTitleProps) => {
   return (
-    <h2 className={cn("text-4xl md:text-5xl font-playfair font-bold mb-8 text-white", className)}>
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className={cn("text-4xl md:text-5xl font-playfair font-bold mb-8 text-center", className)}
+    >
       {children}
-    </h2>
+    </motion.h2>
   );
 };
 

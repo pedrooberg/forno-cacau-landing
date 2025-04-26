@@ -1,21 +1,52 @@
 import { Mail, Phone, Instagram, Globe } from "lucide-react";
+import { motion } from "framer-motion";
+import BackgroundVideo from "./BackgroundVideo";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white relative">
-      {/* Italian pattern columns */}
-      <div className="italian-pattern left-0" />
-      <div className="italian-pattern right-0" />
+    <div className="min-h-screen bg-black/90 text-white relative">
+      <BackgroundVideo />
       
-      <header className="relative z-10 bg-black/80 backdrop-blur-lg border-b border-white/10">
+      {/* Italian pattern columns with animation */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="italian-pattern left-0"
+      />
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="italian-pattern right-0"
+      />
+      
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 bg-black/80 backdrop-blur-lg border-b border-white/10"
+      >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col items-center gap-6">
-            <img 
+            <motion.img 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
               src="/lovable-uploads/2ce15f8a-5319-4e89-8bc0-ccf41cc629b2.png" 
               alt="Forno da Cacau" 
               className="w-full max-w-2xl"
             />
-            <div className="flex items-center gap-6 text-sm justify-center">
+            <motion.div 
+              {...fadeIn}
+              className="flex items-center gap-6 text-sm justify-center"
+            >
               <a href="tel:+5582996146604" className="hover:text-forno-green transition-colors flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 +55 82 99614-6604
@@ -24,16 +55,22 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Mail className="w-4 h-4" />
                 faleconosco@fornodacacau.com.br
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <main className="relative z-10 mx-24">
         {children}
       </main>
 
-      <footer className="bg-black/80 text-white py-8 relative z-10">
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="bg-black/80 text-white py-8 relative z-10"
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
@@ -77,7 +114,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <p>&copy; {new Date().getFullYear()} Forno da Cacau. Todos os direitos reservados.</p>
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 };

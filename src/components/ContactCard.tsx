@@ -1,5 +1,6 @@
 
 import { Mail, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ContactCardProps {
   name: string;
@@ -10,20 +11,33 @@ interface ContactCardProps {
 
 const ContactCard = ({ name, role, email, whatsapp }: ContactCardProps) => {
   return (
-    <div className="contact-signature">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      className="contact-signature"
+    >
       <h4>{name}</h4>
       <p className="text-forno-green text-sm">{role}</p>
-      <div className="contact-info">
-        <a href={`mailto:${email}`}>
+      <motion.div className="contact-info">
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          href={`mailto:${email}`}
+        >
           <Mail className="w-4 h-4" />
           {email}
-        </a>
-        <a href={`https://wa.me/${whatsapp.replace(/\D/g, '')}`}>
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          href={`https://wa.me/${whatsapp.replace(/\D/g, '')}`}
+        >
           <Phone className="w-4 h-4" />
           {whatsapp}
-        </a>
-      </div>
-    </div>
+        </motion.a>
+      </motion.div>
+    </motion.div>
   );
 };
 
