@@ -43,7 +43,7 @@ const sheetVariants = cva(
       },
     },
     defaultVariants: {
-      side: "right",
+      side: "right" as const,
     },
   }
 )

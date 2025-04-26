@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { ChevronLeft, ChevronRight, Menu } from "lucide-react"
@@ -254,9 +253,10 @@ SidebarMenuButton.displayName = "SidebarMenuButton"
 
 interface SidebarTriggerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode
-  variant?: "default" | "outline" 
-  size?: "default" | "sm" | "lg"
+  children?: React.ReactNode;
+  variant?: "default" | "outline";
+  size?: "default" | "sm" | "lg";
+  className?: string;
 }
 
 function SidebarTrigger({
