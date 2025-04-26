@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
-    minify: true, // Changed from 'terser' to true (uses esbuild by default)
+    minify: true, // Uses esbuild by default instead of terser
     assetsDir: "assets",
     rollupOptions: {
       output: {

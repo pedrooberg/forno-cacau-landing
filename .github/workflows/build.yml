@@ -19,8 +19,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    - run: npm install
-    - run: npm run build
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
+    - name: Build project
+      run: npm run build
     
     # Adjustments to fix base path in index.html
     - name: Fix base path in index.html
