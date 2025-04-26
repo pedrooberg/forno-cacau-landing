@@ -19,13 +19,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="italian-pattern left-0"
+        className="italian-pattern left-0 hidden md:block"
       />
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="italian-pattern right-0"
+        className="italian-pattern right-0 hidden md:block"
       />
       
       <motion.header
@@ -61,7 +61,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </motion.header>
 
-      <main className="relative z-10 mx-24">
+      <main className="relative z-10 mx-4 md:mx-24">
         {children}
       </main>
 
