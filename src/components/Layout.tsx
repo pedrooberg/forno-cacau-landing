@@ -16,6 +16,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </video>
       </div>
       
+      <header className="relative z-10 bg-black/80 backdrop-blur-lg border-b border-white/10">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <img 
+              src="/lovable-uploads/9dc461b4-a912-4b04-bfe0-9b603c4bfa5f.png" 
+              alt="Forno da Cacau Logo" 
+              className="w-32" 
+            />
+            <div className="flex items-center gap-6 text-sm">
+              <a href="tel:+5582996146604" className="hover:text-forno-green transition-colors flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                +55 82 99614-6604
+              </a>
+              <a href="mailto:faleconosco@fornodacacau.com.br" className="hover:text-forno-green transition-colors hidden md:flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                faleconosco@fornodacacau.com.br
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
       <div className="relative z-10">
         {children}
       </div>

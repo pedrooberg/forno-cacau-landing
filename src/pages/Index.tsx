@@ -1,27 +1,31 @@
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import TeamCard from "@/components/TeamCard";
 import ProductCard from "@/components/ProductCard";
 import FeatureCard from "@/components/FeatureCard";
+import { Button } from "@/components/ui/button";
+import { CalendarClock } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative">
+      <section className="min-h-[70vh] flex items-center justify-center relative section-pattern">
         <div className="text-center max-w-4xl mx-auto px-4">
-          <img 
-            src="/lovable-uploads/9dc461b4-a912-4b04-bfe0-9b603c4bfa5f.png" 
-            alt="Forno da Cacau Logo" 
-            className="w-64 md:w-96 mx-auto mb-8" 
-          />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair mb-6">
             Soluções Gastronômicas B2B
           </h1>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-gray-300 mb-8">
             Tradição italiana, qualidade excepcional
           </p>
+          <Button 
+            size="lg" 
+            className="bg-forno-green hover:bg-forno-green/90"
+            onClick={() => window.location.href = "mailto:faleconosco@fornodacacau.com.br?subject=Avaliação Gratuita - Investimento"}
+          >
+            <CalendarClock className="mr-2" />
+            Agende uma Avaliação Gratuita
+          </Button>
         </div>
       </section>
 
@@ -73,7 +77,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Solução Integrada Section */}
+      {/* Solução Integrada Section with updated styles */}
       <section className="py-20 section-pattern">
         <div className="container mx-auto px-4">
           <SectionTitle>Solução Integrada</SectionTitle>
@@ -83,28 +87,44 @@ const Index = () => {
             <FeatureCard title="Comodato de fornos" icon="utensils" />
             <FeatureCard title="Treinamento da equipe" icon="utensils" />
           </div>
+          <div className="mt-12 text-center">
+            <Button 
+              size="lg"
+              className="bg-forno-green hover:bg-forno-green/90"
+              onClick={() => window.location.href = "mailto:faleconosco@fornodacacau.com.br?subject=Avaliação de Investimento"}
+            >
+              <CalendarClock className="mr-2" />
+              Solicite uma Avaliação de Investimento
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Nossa Equipe Section */}
+      {/* Nossa Equipe Section with updated professional style */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <SectionTitle>Nossa Equipe</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <TeamCard
-              name="Pedro Oberg"
-              role="Direção Financeira e Comercial"
-              whatsapp="(82) 99624-9229"
-              email="pedrooberg@fornodacacau.com.br"
-              image="/uploads/pedro.jpg"
-            />
-            <TeamCard
-              name="Karolyn Mello"
-              role="Direção de Operações e Produtos"
-              whatsapp="(82) 99946-1983"
-              email="karolyn.mello@fornodacacau.com.br"
-              image="/uploads/karolyn.jpg"
-            />
+            <div className="glass-card">
+              <div className="border-b border-white/10 pb-4 mb-4">
+                <h3 className="text-2xl font-playfair font-bold">Pedro Oberg</h3>
+                <p className="text-forno-green">Direção Financeira e Comercial</p>
+              </div>
+              <div className="space-y-2 text-sm">
+                <p>Email: pedrooberg@fornodacacau.com.br</p>
+                <p>WhatsApp: (82) 99624-9229</p>
+              </div>
+            </div>
+            <div className="glass-card">
+              <div className="border-b border-white/10 pb-4 mb-4">
+                <h3 className="text-2xl font-playfair font-bold">Karolyn Mello</h3>
+                <p className="text-forno-green">Direção de Operações e Produtos</p>
+              </div>
+              <div className="space-y-2 text-sm">
+                <p>Email: karolyn.mello@fornodacacau.com.br</p>
+                <p>WhatsApp: (82) 99946-1983</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
