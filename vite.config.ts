@@ -1,7 +1,7 @@
 
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import * as path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
-    minify: false, // Desativando explicitamente a minificação
+    minify: false, // Explicitly disabling minification
     assetsDir: "assets",
     rollupOptions: {
       output: {
