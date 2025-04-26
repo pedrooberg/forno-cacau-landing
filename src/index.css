@@ -10,8 +10,15 @@
 }
 
 @layer components {
-  .border-pattern {
-    @apply relative before:absolute before:inset-0 before:border-4 before:border-forno-green/20 before:rounded-lg;
+  .section-pattern {
+    @apply relative before:absolute before:inset-0 before:bg-repeat-y before:opacity-20;
+    background-image: url('/lovable-uploads/c220b278-af54-4b1f-adb3-e1d5bc5360f4.png');
+    background-size: 40px auto;
+    background-position: right top;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-colors;
   }
 }
 
