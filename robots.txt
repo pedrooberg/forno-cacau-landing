@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.fornodacacau.com.br/sitemap.xml
